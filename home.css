@@ -14,9 +14,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     
     font-family: 'Courier New', Courier, monospace;
     color: #f0f0f0;
+
+    cursor:url("stuff/mouse.png"), auto;
 }
 
 p {
@@ -82,6 +85,11 @@ footer {
     background-color: #303030;
     width: 100%;
     overflow-x: hidden;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 footer h1 {
@@ -95,9 +103,18 @@ footer p {
     text-align: center;
     max-width: fit-content;
     min-width: 80px;
+    margin-bottom: 20px;
+}
+
+footer button {
+  display: block;
+  border: none;
+  font-size: 2em;
+  margin: 10px;
 }
 /* Footer */
 
 main {
   flex: 1;
+  margin-bottom: 100px;
 }

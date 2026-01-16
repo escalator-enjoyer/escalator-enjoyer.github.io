@@ -10,3 +10,24 @@ const marquote = marquotes[Math.floor(Math.random() * marquotes.length)];
 const marquees = document.getElementsByClassName("marquee")[0].children;
 marquees[0].textContent = marquote;
 marquees[1].textContent = marquote;
+
+function webhook() {
+    var hook = new XMLHttpRequest();
+
+    hook.open('POST', 'url');
+
+    hook.setRequestHeader('Content-type', 'application/json');
+
+    author = document.getElementById("Author").textContent;
+    var content = {
+        username: author === "Sign here (does not have to be your name)" ? "lazy default signature" : author,
+        avatar_url: 'https://example.com/profile-icon-for-bot.png',
+        content: document.getElementById('message').value
+    }
+
+    hook.send(JSON.stringify(content));
+}
+
+document.getElementById("send-button").addEventListener("click", event => {
+    webhook();
+});
