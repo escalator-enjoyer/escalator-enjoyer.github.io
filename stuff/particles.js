@@ -32,7 +32,7 @@ function drawParticles() {
     particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgb(40, 0, 0)';
+    ctx.fillStyle = 'rgb(60, 10, 30)';
     ctx.fill();
     });
 }
@@ -81,7 +81,7 @@ function drawLines() {
       ctx.beginPath();
       ctx.moveTo(particles[i].x, particles[i].y);
       ctx.lineTo(particles[j].x, particles[j].y);
-      ctx.strokeStyle = `rgba(60, 0, 60, 1)`;
+      ctx.strokeStyle = `rgba(40, 0, 0, 1)`;
       ctx.stroke();
       linesDrawn++;
       }
