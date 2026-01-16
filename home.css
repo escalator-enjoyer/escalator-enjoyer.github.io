@@ -3,6 +3,10 @@
   src: url('stuff/Vampliers.otf') format('opentype');
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
