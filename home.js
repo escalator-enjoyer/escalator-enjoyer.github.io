@@ -27,6 +27,8 @@ function webhook() {
     }
 
     hook.send(JSON.stringify(content));
+    document.getElementById("send-button").textContent = "SENT";
+    document.getElementById("send-button").style.display = "none";
 }
 
 document.getElementById("send-button").addEventListener("click", event => {
