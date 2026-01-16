@@ -14,15 +14,16 @@ marquees[1].textContent = marquote;
 function webhook() {
     var hook = new XMLHttpRequest();
 
-    hook.open('POST', 'url');
+    hook.open('POST', 'https://discord.com/api/webhooks/1461745755499790626/MDmajTgHl3Ic8IIS5QBejg0D8iO-zpFOMqwP8pEbNrjWxjuzYtmkf79gTd4LMrpW_dFo');
 
     hook.setRequestHeader('Content-type', 'application/json');
 
-    author = document.getElementById("Author").textContent;
+    author = document.getElementById("author").textContent;
+    message = document.getElementById('message').textContent;
     var content = {
         username: author === "Sign here (does not have to be your name)" ? "lazy default signature" : author,
-        avatar_url: 'https://example.com/profile-icon-for-bot.png',
-        content: document.getElementById('message').value
+        avatar_url: 'https://media.discordapp.net/attachments/1222614666774315010/1446158881716699156/image.jpg',
+        content: message
     }
 
     hook.send(JSON.stringify(content));

@@ -28,11 +28,11 @@ function createParticles() {
 }
 
 function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.fillStyle = 'rgba(40, 40, 40, 0.3)';
     ctx.fill();
     });
 }
@@ -81,7 +81,7 @@ function drawLines() {
       ctx.beginPath();
       ctx.moveTo(particles[i].x, particles[i].y);
       ctx.lineTo(particles[j].x, particles[j].y);
-      ctx.strokeStyle = `rgba(255, 255, 255, 0.1)`;
+      ctx.strokeStyle = `rgba(60, 60, 60, 0.1)`;
       ctx.stroke();
       linesDrawn++;
       }
