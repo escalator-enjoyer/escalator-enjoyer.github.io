@@ -1,11 +1,28 @@
+@font-face {
+  font-family: "Vampliers";
+  src: url('stuff/Vampliers.otf') format('opentype');
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #101010;
-    color: #f0f0f0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
+}
+
+p {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 80vw;
+}
+
+h1 {
+    font-family: "Vampliers";
 }
 
 /* Header */
@@ -16,6 +33,7 @@ header {
 }
 
 header h1 {
+    margin-top: 10px;
     margin: 0 auto;
     text-align: center;
 }
@@ -24,11 +42,15 @@ header h1 {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  animation: marquee 60s linear infinite;
+  animation: marquee 90s linear infinite;
 }
 
 .marquee p {
   display: inline-block;
+  text-align: center;
+  margin: 10px auto;
+  max-width: fit-content;
+  min-width: 80px;
 }
 
 @keyframes marquee {
@@ -39,6 +61,28 @@ header h1 {
     transform: translateX(-50%);
   }
 }
+/* Header */
+
+/* Footer */
+footer {
+    background-color: #303030;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+footer h1 {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer p {
+    text-align: center;
+    max-width: fit-content;
+    min-width: 80px;
+}
+/* Footer */
 
 main {
   flex: 1;
