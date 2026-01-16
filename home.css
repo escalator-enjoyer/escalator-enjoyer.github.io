@@ -22,6 +22,12 @@ body {
     cursor:url("stuff/mouse.png"), auto;
 }
 
+@media (max-width: 680px) {
+  #coin {
+    display: none;
+  }
+}
+
 p {
     text-align: center;
     margin: 10px auto;
