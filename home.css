@@ -18,11 +18,16 @@ body {
 p {
     text-align: center;
     margin: 10px auto;
-    max-width: 80vw;
+}
+
+main p {
+    max-width: 60vw;
+    min-width: 80px;
 }
 
 h1 {
     font-family: "Vampliers";
+    text-align: center;
 }
 
 /* Header */
