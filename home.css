@@ -8,8 +8,36 @@ body {
     flex-direction: column;
 }
 
-footer {
-    bottom: 0;
+/* Header */
+header {
+    background-color: #303030;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header h1 {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee p {
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 main {
