@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
     color: #f0f0f0;
 
     cursor:url("stuff/mouse.png"), auto;
@@ -25,11 +25,13 @@ body {
 p {
     text-align: center;
     margin: 10px auto;
+    font-size: 1.2em;
 }
 
 a {
-  color: #cf83ea;
-  text-decoration: double;
+  color: #fb6666;
+  text-decoration: underline;
+  border-bottom: #f0f0f0 5px;
 }
 
 main p {
