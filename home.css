@@ -24,9 +24,14 @@ p {
     margin: 10px auto;
 }
 
+a {
+  color: #cf83ea;
+  text-decoration: double;
+}
+
 main p {
-    max-width: 60vw;
-    min-width: 80px;
+    max-width: 40vw;
+    min-width: 20vw;
 }
 
 h1 {
