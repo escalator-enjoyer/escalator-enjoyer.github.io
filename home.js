@@ -32,11 +32,11 @@ function webhook() {
         message = message.substring(0, 500)
     }
 
-    send = ``;
-    send += (defaults[0].element.textContent === defaults[0].text) ? `` : `answer to "who's joe":\n ${defaults[0].element.text}\n\n`;
-    send += (defaults[1].element.textContent === defaults[1].text) ? `` : `addition to "things i like":\n ${defaults[1].element.text}\n\n`;
-    send += (defaults[2].element.textContent === defaults[2].text) ? `` : `music recommendation:\n ${defaults[2].element.text}\n\n`;
-    send += (defaults[3].element.textContent === defaults[3].text) ? `` : `future update section:\n ${defaults[3].element.text}\n\n`;
+    let send = ``;
+    send += (defaults[0].element.textContent === defaults[0].text) ? `` : `answer to "who's joe":\n${defaults[0].element.textContent}\n\n`;
+    send += (defaults[1].element.textContent === defaults[1].text) ? `` : `addition to "things i like":\n${defaults[1].element.textContent}\n\n`;
+    send += (defaults[2].element.textContent === defaults[2].text) ? `` : `music recommendation:\n${defaults[2].element.textContent}\n\n`;
+    send += (defaults[3].element.textContent === defaults[3].text) ? `` : `future update section:\n${defaults[3].element.textContent}\n\n`;
 
     send += send === `` ? message : `the actual message:\n${message}`
     var content = {
