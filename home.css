@@ -3,6 +3,16 @@
   src: url('stuff/Vampliers.otf') format('opentype');
 }
 
+@font-face {
+  font-family: "chiller";
+  src: url('stuff/chiller.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "horse-belonk";
+  src: url('stuff/HorsebelonkRegular.otf') format('opentype');
+}
+
 *:focus {
     outline: none;
 }
@@ -49,6 +59,13 @@ h1 {
     font-family: "Vampliers";
     text-align: center;
     margin-top: 50px;
+}
+
+h2 {
+    font-family: "chiller";
+    text-align: center;
+    margin-top: 20px;
+    font-size: xx-large;
 }
 
 /* Header */
