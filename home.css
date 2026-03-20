@@ -124,7 +124,8 @@ footer p {
     max-width: fit-content;
     min-width: 80px;
     margin-bottom: 20px;
-    background-color: #412525;
+    background-color: #3b1818;
+    border: #101010 3px solid;
 }
 
 footer button {
