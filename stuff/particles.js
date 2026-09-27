@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 let particles = [];
 let particleCount = document.body.clientWidth / 15;
 const maxDistance = 30;
-const lineDistance = 25;
+const lineDistance = 50;
 const mouse = { x: null, y: null };
 
 function resizeCanvas() {
@@ -32,7 +32,7 @@ function drawParticles() {
     particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgb(60, 10, 30)';
+    ctx.fillStyle = 'rgb(51, 23, 34)';
     ctx.fill();
     });
 }
@@ -43,22 +43,12 @@ function updateParticles() {
     p.y += p.vy;
 
     p.vx += (Math.random() - 0.5) * 0.1;
-    p.vy += (Math.random() - 0.5) * 0.1;
+    p.vy = Math.random() * 1.5;
 
     if (p.x < 0) p.x = canvas.width;
     if (p.x > canvas.width) p.x = 0;
     if (p.y < 0) p.y = canvas.height;
     if (p.y > canvas.height) p.y = 0;
-
-    const dx = p.x - mouse.x;
-    const dy = p.y - mouse.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance < maxDistance) {
-      const angle = Math.atan2(dy, dx);
-      p.vx += Math.cos(angle);
-      p.vy += Math.sin(angle);
-    }
 
     if (Math.abs(p.vx) > 0.01) {
       p.vx *= 0.99;
@@ -81,7 +71,7 @@ function drawLines() {
       ctx.beginPath();
       ctx.moveTo(particles[i].x, particles[i].y);
       ctx.lineTo(particles[j].x, particles[j].y);
-      ctx.strokeStyle = `rgba(40, 0, 0, 1)`;
+      ctx.strokeStyle = `rgb(40, 12, 12)`;
       ctx.stroke();
       linesDrawn++;
       }
