@@ -46,8 +46,8 @@ function webhook() {
         body: JSON.stringify(data)
     })
     .catch(error => {
-        console.error("Failed to send webhook:", error);
-        alert("Failed to send message.");
+        console.error(error);
+        alert("something went wrong, ping or dm me");
     });
 }
 
