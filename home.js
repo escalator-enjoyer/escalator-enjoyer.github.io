@@ -17,39 +17,40 @@ for (let i = 0; i < 4; i++) {
 }
 
 function webhook() {
-    var hook = new XMLHttpRequest();
+    let author = document.getElementById("author").textContent.trim();
+    let message = document.getElementById("message").textContent.trim();
 
-    hook.open('POST', 'https://discord.com/api/webhooks/1461745755499790626/MDmajTgHl3Ic8IIS5QBejg0D8iO-zpFOMqwP8pEbNrjWxjuzYtmkf79gTd4LMrpW_dFo');
+    if (author.length > 32) { author = author.substring(0, 32); }
+    if (message.length > 500) { message = message.substring(0, 500); }
 
-    hook.setRequestHeader('Content-type', 'application/json');
+    let send = "";
+    send += (defaults[0].element.textContent === defaults[0].text) ? "" : `answer to "who's joe":\n${defaults[0].element.textContent}\n\n`;
+    send += (defaults[1].element.textContent === defaults[1].text) ? "" : `addition to "things i like":\n${defaults[1].element.textContent}\n\n`;
+    send += (defaults[2].element.textContent === defaults[2].text) ? "" : `music recommendation:\n${defaults[2].element.textContent}\n\n`;
+    send += (defaults[3].element.textContent === defaults[3].text) ? "" : `future update section:\n${defaults[3].element.textContent}\n\n`;
 
-    author = document.getElementById("author").textContent.trim();
-    message = document.getElementById('message').textContent.trim();
-    if (author.length > 32) {
-        author = author.substring(0, 32);
-    }
-    if (message.length > 500) {
-        message = message.substring(0, 500)
-    }
+    // lmao this is disgusting
+    send += send === "" ? message : `the actual message:\n${message}`;
 
-    let send = ``;
-    send += (defaults[0].element.textContent === defaults[0].text) ? `` : `answer to "who's joe":\n${defaults[0].element.textContent}\n\n`;
-    send += (defaults[1].element.textContent === defaults[1].text) ? `` : `addition to "things i like":\n${defaults[1].element.textContent}\n\n`;
-    send += (defaults[2].element.textContent === defaults[2].text) ? `` : `music recommendation:\n${defaults[2].element.textContent}\n\n`;
-    send += (defaults[3].element.textContent === defaults[3].text) ? `` : `future update section:\n${defaults[3].element.textContent}\n\n`;
+    const data = {
+        name: author === "Sign here (does not have to be y" ? "lazy default signature" : author,
+        image: "https://media.discordapp.net/attachments/1222614666774315010/1446158881716699156/image.jpg",
+        message: send
+    };
 
-    send += send === `` ? message : `the actual message:\n${message}`
-    var content = {
-        username: author === "Sign here (does not have to be your name. 32 character limit)" ? "lazy default signature" : author,
-        avatar_url: 'https://media.discordapp.net/attachments/1222614666774315010/1446158881716699156/image.jpg',
-        content: send
-    }
-
-    hook.send(JSON.stringify(content));
-    document.getElementById("send-button").textContent = "SENT";
-    document.getElementById("send-button").style.display = "none";
+    fetch("https://solitary-sun-6423.chookitypok123.workers.dev/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .catch(error => {
+        console.error("Failed to send webhook:", error);
+        alert("Failed to send message.");
+    });
 }
 
-document.getElementById("send-button").addEventListener("click", event => {
+document.getElementById("send-button").addEventListener("click", () => {
     webhook();
 });
