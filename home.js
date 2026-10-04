@@ -49,6 +49,8 @@ function webhook() {
         console.error(error);
         alert("something went wrong, ping or dm me");
     });
+
+    document.getElementById("send-button").style.display = "none";
 }
 
 document.getElementById("send-button").addEventListener("click", () => {
